@@ -7,6 +7,9 @@ see https://github.com/BITPlan/com.bitplan.simplerest-api
 # Implementation
 see https://github.com/BITPlan/com.bitplan.simplerest
 
+# Stackoverflow
+see http://stackoverflow.com/a/37894498/1497139
+
 ### Project
 [![Build Status](https://travis-ci.org/BITPlan/com.bitplan.simplerest-example.svg?branch=master)](https://travis-ci.org/BITPlan/com.bitplan.simplerest-example)
 
