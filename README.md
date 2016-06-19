@@ -25,7 +25,7 @@ see http://stackoverflow.com/a/37894498/1497139
 ### Distribution
 Available at Maven Central see 
 
-http://search.maven.org/#artifactdetails|com.bitplan.rest|com.bitplan.simplerest-example|0.0.1|jar
+http://search.maven.org/#artifactdetails|com.bitplan.rest|com.bitplan.simplerest-example|0.0.2|jar
 
 Maven dependency:
 
@@ -33,9 +33,10 @@ Maven dependency:
 <dependency>
 	<groupId>com.bitplan.rest</groupId>
 	<artifactId>com.bitplan.simplerest-example</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 </dependency>
 ```
 
 ## Version history
 * 0.0.1: 2016-06-18 First release via GitHub / Maven central
+* 0.0.2: 2016-06-19 adds basic auth support
