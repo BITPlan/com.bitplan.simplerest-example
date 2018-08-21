@@ -8,8 +8,11 @@
 [![GitHub](https://img.shields.io/github/license/BITPlan/com.bitplan.simplerest-example.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/3/38/BITPlanLogoFontLessTransparent.png/198px-BITPlanLogoFontLessTransparent.png)](http://www.bitplan.com)
 
-### Project pages
-[com.bitplan.simplerest-example](https://BITPlan.github.io/com.bitplan.simplerest-example)
+### Documentation
+* [Wiki](http://www.bitplan.com/SimpleRest)
+* [com.bitplan.simplerest-example Project pages](https://BITPlan.github.io/com.bitplan.simplerest-example)
+* [Javadoc](https://BITPlan.github.io/com.bitplan.simplerest-example/apidocs/index.html)
+* [Test-Report](https://BITPlan.github.io/com.bitplan.simplerest-example/surefire-report.html)
 
 ### Maven dependency
 
