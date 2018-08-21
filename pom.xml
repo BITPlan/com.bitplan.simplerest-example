@@ -1,190 +1,44 @@
-<!--
-	Copyright (c) 2016 BITPlan GmbH
-
-	Project details and license at:
-	https://github.com/BITPlan/com.bitplan.simplerest-example
-
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!-- Copyright (c) 2016 BITPlan GmbH Project details and license at: https://github.com/BITPlan/com.bitplan.simplerest-example -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.bitplan.pom</groupId>
+		<artifactId>com.bitplan.pom</artifactId>
+		<version>0.0.6</version>
+		<relativePath>../com.bitplan.pom/pom.xml</relativePath>
+	</parent>
 	<groupId>com.bitplan.rest</groupId>
 	<artifactId>com.bitplan.simplerest-example</artifactId>
 	<version>0.0.1</version>
 	<name>RESTFul Jersey Example</name>
 	<description>Example for a RESTFul application</description>
-	<packaging>jar</packaging>
-	<url>https://github.com/BITPlan/com.bitplan.simplerest-example</url>
-	<licenses>
-		<license>
-			<name>Apache 2.0 license</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
-		</license>
-	</licenses>
-	<scm>
-		<connection>scm:git:git://github.com/BITPlan/com.bitplan.simplerest-example.git</connection>
-		<developerConnection>scm:git:git@github.com:BITPlan/com.bitplan.simplerest-example.git</developerConnection>
-		<url>https://github.com/BITPlan/com.bitplan.simplerest-example</url>
-	</scm>
-	<issueManagement>
-		<url>https://github.com/BITPlan/com.bitplan.simplerest-example/issues</url>
-		<system>GitHub</system>
-	</issueManagement>
-	<developers>
-		<developer>
-			<id>wf</id>
-			<name>Wolfgang Fahl</name>
-			<organization>BITPlan GmbH</organization>
-			<organizationUrl>http://www.bitplan.com</organizationUrl>
-		</developer>
-	</developers>
 	<properties>
-		<!-- http://stackoverflow.com/questions/3017695/how-to-configure-encoding-in-maven -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
-		<github.global.server>github</github.global.server>
+		<!-- for parent pom to work -->
+		<github.project>com.bitplan.simplerest-example</github.project>
+		<!-- for README.md generation -->
+		<documentation.wiki>http://www.bitplan.com/SimpleRest</documentation.wiki>
 	</properties>
 	<dependencies>
 		<!-- simplerest -->
 		<dependency>
 			<groupId>com.bitplan.rest</groupId>
 			<artifactId>com.bitplan.simplerest</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.11</version>
 		</dependency>
 		<!-- simplerest TestRestserver -->
 		<dependency>
 			<groupId>com.bitplan.rest</groupId>
 			<artifactId>com.bitplan.simplerest</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.11</version>
 			<type>test-jar</type>
 		</dependency>
 		<!-- simplerest -api -->
 		<dependency>
 			<groupId>com.bitplan.rest</groupId>
 			<artifactId>com.bitplan.simplerest-api</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.8</version>
 		</dependency>
 	</dependencies>
-	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source />
-					<target />
-				</configuration>
-			</plugin>
-			<plugin>
-				<!--
-					see
-					http://central.sonatype.org/pages/apache-maven.html
-
-					Javadoc and Sources Attachments
-					To get Javadoc and Source jar files generated, you have to configure
-					the
-					javadoc and source Maven plugins.
-				-->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<!--
-				GPG Signed Components
-				The Maven GPG plugin is used to sign the components with the following
-				configuration.
-			-->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ssh</artifactId>
-				<version>2.10</version>
-			</extension>
-		</extensions>
-	</build>
-	<profiles>
-		<profile>
-			<id>dist</id>
-			<build>
-				<plugins>
-
-					<!--
-						according to :
-
-						http://central.sonatype.org/pages/apache-maven.html
-
-						Nexus Staging Maven Plugin for Deployment and Release
-
-						The Nexus Staging Maven Plugin is the recommended way to deploy your
-						components
-						to OSSRH and release them to the Central Repository.
-						To configure it simply add the plugin to your Maven pom.xml.
-					-->
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.3</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<!-- set to true for automation -->
-							<autoReleaseAfterClose>false</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
-					<!-- Maven release plugin -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-release-plugin</artifactId>
-						<version>2.5</version>
-						<configuration>
-							<autoVersionSubmodules>true</autoVersionSubmodules>
-							<useReleaseProfile>false</useReleaseProfile>
-							<releaseProfiles>release</releaseProfiles>
-							<goals>deploy</goals>
-							<arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 </project>
