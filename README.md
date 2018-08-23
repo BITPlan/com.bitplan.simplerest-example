@@ -10,6 +10,9 @@
 
 ### Documentation
 * [Wiki](http://www.bitplan.com/SimpleRest)
+* [com.bitplan.simplerest-example Project pages](https://BITPlan.github.io/com.bitplan.simplerest-example)
+* [Javadoc](https://BITPlan.github.io/com.bitplan.simplerest-example/apidocs/index.html)
+* [Test-Report](https://BITPlan.github.io/com.bitplan.simplerest-example/surefire-report.html)
 ### Maven dependency
 
 Maven dependency
